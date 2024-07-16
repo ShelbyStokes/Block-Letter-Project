@@ -1,0 +1,27 @@
+#Prompt: 1. Create a list called single_digits that consists of the numbers 0-9 (inclusive).
+# Your code below:
+single_digits = list(range(0,10))
+print(single_digits)
+#Create a for loop that goes through single_digits and prints out each one.
+
+# for digit in single_digits:
+#   print(digit) 
+
+#3.Before the loop, create a list called squares. Assign it to be an empty list to begin with.
+
+# squares = []
+
+#4.Inside the loop that iterates through single_digits, append the squared value of each element of single_digits to the list squares. You can do this before or after printing the element.
+#5.After the for loop, print out squares.
+
+squares = []
+for digit in single_digits:
+  print(digit) 
+  squares.append(digit**2)
+print(squares)
+
+#6.Create the list cubes using a list comprehension on the single_digits list. Each element of cubes should be an element of single_digits taken to the third power.
+#7. Print cubes.
+
+cubes = [digit**3 for digit in single_digits]
+print(cubes)
