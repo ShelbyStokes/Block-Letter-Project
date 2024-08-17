@@ -1,0 +1,51 @@
+# Goal: take the provided string of data, turn it into a list, strip excess info, and use a loop to present cleaned data in readable format. 
+#This exerices expersses is a review for concepts: 
+# .upper(), .title(), and .lower() adjust the casing of your string.
+# .split() takes a string and creates a list of substrings.
+# .join() takes a list of strings and creates a string.
+# .strip() cleans off whitespace, or other noise from the beginning and end of a string.
+# .replace() replaces all instances of a character/string in a string with another character/string.
+# .find() searches a string for a character/string and returns the index value that character/string is found at.
+# .format() allows you to interpolate a string with variables.
+
+
+highlighted_poems = "Afterimages:Audre Lorde:1997,  The Shadow:William Carlos Williams:1915, Ecstasy:Gabriela Mistral:1925,   Georgia Dusk:Jean Toomer:1923,   Parting Before Daybreak:An Qi:2014, The Untold Want:Walt Whitman:1871, Mr. Grumpledump's Song:Shel Silverstein:2004, Angel Sound Mexico City:Carmen Boullosa:2013, In Love:Kamala Suraiyya:1965, Dream Variations:Langston Hughes:1994, Dreamwood:Adrienne Rich:1987"
+
+print(highlighted_poems + "\n")
+
+highlighted_poems_list = highlighted_poems.split(",")
+
+print(highlighted_poems_list)
+print("\n")
+
+highlighted_poems_stripped = []
+for line in highlighted_poems_list:
+  highlighted_poems_stripped.append(line.strip())
+
+print(highlighted_poems_stripped)
+print("\n")
+
+highlighted_poems_details = []
+
+for line in highlighted_poems_stripped:
+  highlighted_poems_details.append(line.split(':'))
+print(highlighted_poems_details)
+print("\n")
+
+titles = []
+poets = []
+dates = []
+
+for line in highlighted_poems_details:
+  titles.append(line[0])
+  poets.append(line[1])
+  dates.append(line[2])
+
+for n in range(0, len(highlighted_poems_details)):
+  txt = "The poem \"{TITLE}\" was published by {POET} in {DATE}."
+  print(txt.format(TITLE=titles[n],POET = poets[n],DATE = dates[n]))
+
+
+
+
+
